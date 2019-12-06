@@ -9,7 +9,9 @@ import qualified ByteString.BuildersBenchmark.Inputs as C
 
 main =
   defaultMain $
-  [ A.action "averagedAppends-1" B.averagedAppends 1
+  [ A.action "fibonacci" B.fibonacci 16
+    ,
+    A.action "averagedAppends-1" B.averagedAppends 1
     ,
     A.action "averagedAppends-100" B.averagedAppends 100
     ,

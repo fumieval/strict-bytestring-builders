@@ -32,7 +32,7 @@ actionAndSubject :: (a -> B.Action) -> a -> String -> A.Subject -> Benchmark
 actionAndSubject action a subjectName subject =
   bench subjectName $ whnf (\x -> action x subject) a
 {-# INLINE actionAndSubject #-}
-
+{-
 finalization :: Int -> String -> A.Subject -> Benchmark
 finalization factor subjectName (A.Subject mempty (<>) mconcat foldMap fromBytes toBytes) =
   bench subjectName $! whnf toBytes $! subject
@@ -42,3 +42,4 @@ finalization factor subjectName (A.Subject mempty (<>) mconcat foldMap fromBytes
       (fromBytes "hello" <> fromBytes "asdf") <>
       fromBytes "fsndfn" <>
       (fromBytes "dfgknfg" <> fromBytes "aaaaaa")
+-}
