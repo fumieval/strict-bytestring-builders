@@ -57,3 +57,8 @@ blazeBuilder :: Subject
 blazeBuilder =
   Subject mempty mappend mconcat foldMap I.fromByteString (D.toStrict . I.toLazyByteString)
 {-# INLINE blazeBuilder #-}
+
+masonBuilder :: Subject
+masonBuilder =
+  Subject mempty mappend mconcat foldMap M.byteStringCopy M.toStrictByteString
+{-# INLINE masonBuilder #-}
